@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc  //annotation driven. formatting, conversion, ...
-@ComponentScan("com.sumutella.basicspringsecurity")
+@ComponentScan(basePackages = "com.sumutella.basicspringsecurity")
 public class SecurityDemoAppConfig {
 
 

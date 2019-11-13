@@ -14,4 +14,9 @@ public class MySpringSecurityDemoController {
     public String showHome(){
         return "home";
     }
+
+    @GetMapping("/my-login")
+    public String showLogin(){
+        return "login";
+    }
 }
