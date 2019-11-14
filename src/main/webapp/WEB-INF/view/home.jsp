@@ -1,4 +1,5 @@
-<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 
 <html>
@@ -7,8 +8,12 @@
 <hr>
 <p>Spring Security app have run successfully</p>
 
-<f:form action="${pageContext.request.contextPath}/logout" method="post">
+<p>User: <security:authentication property="principal.username"/></p>
+<p>Password: <security:authentication property="principal.authorities"/></p>
+
+<hr>
+<form:form action="${pageContext.request.contextPath}/logout" method="post">
     <input type="submit" value="Logout"/>
-</f:form>
+</form:form>
 </body>
 </html>

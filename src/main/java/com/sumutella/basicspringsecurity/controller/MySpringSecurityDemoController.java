@@ -10,13 +10,32 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class MySpringSecurityDemoController {
-    @GetMapping("/")
-    public String showHome(){
-        return "home";
-    }
+
 
     @GetMapping("/my-login")
     public String showLogin(){
         return "login";
     }
+
+
+    @GetMapping("/")
+    public String showLanding() {
+        return "landing";
+    }
+
+    @GetMapping("/employees")
+    public String showHome() {
+        return "home";
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

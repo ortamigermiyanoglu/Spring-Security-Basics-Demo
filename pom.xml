@@ -7,7 +7,7 @@
   <groupId>com.sumutella</groupId>
   <artifactId>basic-spring-security-demo</artifactId>
   <version>1.0-SNAPSHOT</version>
-
+    <packaging>war</packaging>
   <name>basic-spring-security-demo Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -30,6 +30,14 @@
     </dependency>
 
     <!-- Spring Security -->
+    <!-- spring-security-taglibs -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>${springframework.version}</version>
+    </dependency>
+
+
     <!-- spring-security-web and spring-security-config -->
 
     <dependency>

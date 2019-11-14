@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -41,7 +41,7 @@
             <div style="padding-top: 30px" class="panel-body">
 
                 <!-- Login Form -->
-                <f:form action="${pageContext.request.contextPath}/auth-user"
+                <form:form action="${pageContext.request.contextPath}/auth-user"
                            method="POST" class="form-horizontal">
 
                     <!-- Place for messages: error, alert etc ... -->
@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                </f:form>
+                </form:form>
 
             </div>
 
