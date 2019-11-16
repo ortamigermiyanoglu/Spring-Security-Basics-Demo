@@ -19,7 +19,7 @@
 </p>
 <hr>
 <p>
-    <a href="${pageContext.request.contextPath}/employees">Access Secure Site (requires login)</a>
+    <a href="${pageContext.request.contextPath}/employee">Access Secure Site (requires login)</a>
 </p>
 </body>
 </html>

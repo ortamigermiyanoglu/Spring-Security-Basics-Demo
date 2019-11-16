@@ -9,12 +9,12 @@
 <p>Spring Security app have run successfully</p>
 
 <p>User: <security:authentication property="principal.username"/></p>
-<p>Password: <security:authentication property="principal.authorities"/></p>
+<p>Role(s): <security:authentication property="principal.authorities"/></p>
 
 
 
 <security:authorize access="hasRole(('MANAGER'))">
-    <a href="${pageContext.request.contextPath}/manager">Details about upcoming Managers Meeting</a>
+    <a href="${pageContext.request.contextPath}/manager/announcements">Details about upcoming Managers Meeting</a>
 </security:authorize>
 
 

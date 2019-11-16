@@ -2,7 +2,6 @@ package com.sumutella.basicspringsecurity.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author sumutella
@@ -26,14 +25,14 @@ public class MySpringSecurityDemoController  {
         return "landing";
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/employee")
     public String showHome() {
         return "home";
     }
 
-    @GetMapping("/manager")
+    @GetMapping("/manager/announcements")
     public String showManagerHome() {
-        return "manager-home";
+        return "manager-announcements";
     }
 
     @GetMapping("/access-denied")

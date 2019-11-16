@@ -36,9 +36,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                     .antMatchers("/").permitAll()  // allow public access to home page
-                    .antMatchers("/employees").hasRole("EMPLOYEE")
-                    .antMatchers("/leaders/**").hasRole("MANAGER")
-                    .antMatchers("/systems/**").hasRole("ADMIN")
+                    .antMatchers("/employee").hasRole("EMPLOYEE")
+                    .antMatchers("/manager/**").hasRole("MANAGER")
+                    .antMatchers("/system/**").hasRole("ADMIN")
                 .and()
                     .formLogin()
                     .loginPage("/my-login")
