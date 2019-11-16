@@ -35,19 +35,23 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").permitAll()  // allow public access to home page
-                .antMatchers("/employees").hasRole("EMPLOYEE")
-                .antMatchers("/leaders/**").hasRole("MANAGER")
-                .antMatchers("/systems/**").hasRole("ADMIN")
+                    .antMatchers("/").permitAll()  // allow public access to home page
+                    .antMatchers("/employees").hasRole("EMPLOYEE")
+                    .antMatchers("/leaders/**").hasRole("MANAGER")
+                    .antMatchers("/systems/**").hasRole("ADMIN")
                 .and()
-                .formLogin()
-                .loginPage("/my-login")
-                .loginProcessingUrl("/auth-user")
-                .defaultSuccessUrl("/employees")
-                .permitAll()
+                    .formLogin()
+                    .loginPage("/my-login")
+                    .loginProcessingUrl("/auth-user")
+                    .defaultSuccessUrl("/employees")
+                    .permitAll()
                 .and()
-                .logout()
-                .logoutSuccessUrl("/my-login")  // after logout then redirect to login page
-                .permitAll();
+                      .exceptionHandling().accessDeniedPage("/access-denied")
+                .and()
+                    .logout()
+                    .logoutSuccessUrl("/my-login?logout").invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID").permitAll(); // after logout then redirect to login page
+
+
     }
 }

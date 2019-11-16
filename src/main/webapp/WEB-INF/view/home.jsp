@@ -11,6 +11,13 @@
 <p>User: <security:authentication property="principal.username"/></p>
 <p>Password: <security:authentication property="principal.authorities"/></p>
 
+
+
+<security:authorize access="hasRole(('MANAGER'))">
+    <a href="${pageContext.request.contextPath}/manager">Details about upcoming Managers Meeting</a>
+</security:authorize>
+
+
 <hr>
 <form:form action="${pageContext.request.contextPath}/logout" method="post">
     <input type="submit" value="Logout"/>
