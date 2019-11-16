@@ -43,7 +43,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
                     .formLogin()
                     .loginPage("/my-login")
                     .loginProcessingUrl("/auth-user")
-                    .defaultSuccessUrl("/employees")
+                    .defaultSuccessUrl("/employee")
                     .permitAll()
                 .and()
                       .exceptionHandling().accessDeniedPage("/access-denied")
