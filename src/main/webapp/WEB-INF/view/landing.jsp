@@ -15,7 +15,7 @@
 
 <hr>
 <p>
-    Welcome to the landing page! This page is open to the public ... no login required :-)
+    Welcome to the landing page! This page is open to the public ... no login required
 </p>
 <hr>
 <p>

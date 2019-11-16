@@ -26,9 +26,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
         User.UserBuilder users = User.withDefaultPasswordEncoder();
 
         auth.inMemoryAuthentication()
-                .withUser(users.username("john").password("test123").roles("EMPLOYEE"))
-                .withUser(users.username("mary").password("test123").roles("MANAGER", "EMPLOYEE"))
-                .withUser(users.username("susan").password("test123").roles("ADMIN", "EMPLOYEE"));
+                .withUser(users.username("john").password("123").roles("EMPLOYEE"))
+                .withUser(users.username("mary").password("123").roles("MANAGER", "EMPLOYEE"))
+                .withUser(users.username("susan").password("123").roles("ADMIN", "EMPLOYEE"));
     }
 
 
@@ -43,10 +43,11 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/my-login")
                 .loginProcessingUrl("/auth-user")
+                .defaultSuccessUrl("/employees")
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/")  // after logout then redirect to landing page (root)
+                .logoutSuccessUrl("/my-login")  // after logout then redirect to login page
                 .permitAll();
     }
 }

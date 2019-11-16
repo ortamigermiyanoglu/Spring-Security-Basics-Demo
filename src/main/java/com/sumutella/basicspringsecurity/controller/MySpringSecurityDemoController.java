@@ -28,14 +28,4 @@ public class MySpringSecurityDemoController {
         return "home";
     }
 
-
-
-
-
-
-
-
-
-
-
 }
